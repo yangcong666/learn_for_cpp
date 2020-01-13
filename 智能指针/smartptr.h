@@ -6,7 +6,8 @@
 using namespace std;
 
 // 计数类
-class _counter{
+class _counter
+{
 
 public:
     _counter(int u,int v):count(u),count_weak(v){}
@@ -43,7 +44,7 @@ public:
 
     bool is_empty() const
     {
-        return ptr == nullptr;
+        return !(ptr == nullptr);
     }
 
     smart_ptr()
@@ -100,6 +101,7 @@ public:
         clear();
     }
 
+// 数据
     _counter *pc;
     T *ptr;
     T *operator->()
@@ -173,6 +175,7 @@ public:
 
     _counter *pc;
     T* ptr;
+    
     smart_ptr<T> lock()
     {
         smart_ptr<T> tmp;
